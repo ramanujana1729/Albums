@@ -1,23 +1,147 @@
-.App {
-  text-align: center;
+
+body{
+  margin: 0;
+  padding: 0;
 }
 
-.list {
-  list-style-type: none;
-  margin-left: 28px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid black;
+*{
+  box-sizing: border-box;
 }
 
-.list li {
+.App{
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  background-color: #f3b303;
+}
+
+
+/* Navbar*/
+
+.navbar{
+  height: 60px;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0px;
+  color: #fff;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Sofia",sans-serif;
+  padding: 0 10px;
 }
 
-.list li h1 {
-  border-right: 1px solid red;
-  padding-right: 8px;
+/* albumdata */
+
+.albumdata{
+  padding: 70px 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 280px);
+  justify-content: center;
+}
+.albumdata_list{
+  padding: 5px;
+  height: 150px;
+  width: auto;
+  text-align: center;
+  border: 2px solid #fff;
+}
+.update-delete-div{
+  display: flex;
+  justify-content: space-around;
 }
 
-.list li p {
-  padding: 4px 12px;
+
+
+/* update menu */
+
+.update-menu{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 300px;
+  width: 350px;
+  background-color: wheat;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  /* visibility: hidden; */
+  /* display: none; */
 }
+
+.update-button{
+  background-color: blue;
+  height: 30px;
+  width: 60px;
+  color: aliceblue;
+  border-radius: 10px;
+}
+
+.update-menu>input[type='text']{
+  height: 50px;
+  border-radius: 10px;
+}
+
+.cancel-button{
+  position: fixed;
+  top: 5%;
+  left: 95%;
+  transform: translate(-50%,-50%);
+  border-radius: 5%;
+  background-color: #f3b303;
+  font-weight: bolder;
+}
+
+.add-album{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  border: 0;
+  background-color: black;
+  color: #fff;
+  font-family: "Sofia",sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.add-album-form{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-album-form>button{
+  background-color: black;
+  border: 0;
+  color: #f3b303;
+}
+
+/*  responsiveness  */
+/* medium size screen */
+@media all and (min-width:801px) and (max-width:950px){
+  .albumdata{
+      grid-template-columns: repeat(2,320px);
+      column-gap: 80px;
+      justify-content: center;
+  }
+}
+
+/* small size screen */
+
+@media all and (min-width:20px) and (max-width:800px){
+  .albumdata{
+      grid-template-columns: repeat(1,280px);
+      justify-content: center;
+  }
+}
+
